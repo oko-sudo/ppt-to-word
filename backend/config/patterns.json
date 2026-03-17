@@ -1,0 +1,40 @@
+{
+  "_comment": "이 파일에서 모든 패턴과 규칙을 수정할 수 있습니다.",
+
+  "slide_marker": {
+    "_comment": "#숫자 또는 #숫자-숫자 패턴",
+    "pattern": "#(\\d+)(-\\d+)?"
+  },
+
+  "prefix_detection": {
+    "_comment": "텍스트 앞부분의 반복 접두어 패턴 (예: '나레이션:', 'MC:')",
+    "patterns": [
+      "^([가-힣A-Za-z0-9]+\\s*[：:])\\s*",
+      "^([A-Za-z]+\\s*[：:])\\s*"
+    ],
+    "min_occurrences": 2,
+    "_comment_min": "몇 개 슬라이드 이상에서 발견되어야 접두어로 간주할지"
+  },
+
+  "non_korean": {
+    "_comment": "검수 대상: 한글이 아닌 문자(영어, 숫자, 특수기호, 괄호 포함)",
+    "korean_range": "[\\uAC00-\\uD7A3\\u1100-\\u11FF\\u3130-\\u318F]",
+    "min_alphanumeric_required": true,
+    "_comment_min": "알파벳 또는 숫자가 포함되어야 검수 항목으로 포함"
+  },
+
+  "text_cleanup": {
+    "_comment": "텍스트 정리 규칙",
+    "collapse_whitespace": true,
+    "remove_slide_markers": true
+  },
+
+  "word_output": {
+    "_comment": "Word 문서 출력 설정",
+    "slide_number_format": "{prefix}_{number:02d}",
+    "review_item_color": "FF0000",
+    "review_item_bold": true,
+    "table_col1_width_cm": 3.5,
+    "table_col2_width_cm": 14.0
+  }
+}
